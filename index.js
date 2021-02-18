@@ -1,5 +1,18 @@
 import react from 'react';
 import reactDom from 'react-dom';
+
+
+// Detail on import and export
+/* import App from './App'
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+); */
+
+//Functional Componants
+/*
 import App from './App';
 
 
@@ -9,6 +22,8 @@ reactDom.render(
   </>
   ,document.getElementById('root')
 );
+*/
+
 /* 
 //dynamic style and content based on hour
 const base={
