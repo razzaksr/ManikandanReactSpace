@@ -2,6 +2,28 @@ import react from 'react';
 import reactDom from 'react-dom';
 
 
+
+reactDom.render(
+  <>
+    
+  </>
+  ,document.getElementById('root')
+);
+
+
+// POC on import,export aand Components
+/*
+import App from './App';
+
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+*/
+
+
 // Detail on import and export
 /* import App from './App'
 reactDom.render(

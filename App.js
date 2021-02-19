@@ -1,6 +1,17 @@
 import react from 'react';
 import reactDom from 'react-dom';
+import Kart from './Kart';
 
+function App()
+{
+  //return(<Kart/>);
+  return(
+    <>
+      <Kart/>
+    </>
+  );
+}
+export default App;
 
 // Detail on import and export
 /* 
