@@ -1,11 +1,38 @@
 import react from 'react';
 import reactDom from 'react-dom';
 
+/* 
+// Array Mapping
+const hey=[12,45,78,90,11]
+
+const yet=hey.map(function check(temp)
+{
+  console.log(temp);
+}
+);
+
+console.log("Modern Script");
+
+const fit=hey.map((temp)=>{
+  console.log(temp+10);
+}
+);
+ */
+
+import photos from './Feed';
+import Hai from './Hai'
+
+function iterate(temp)
+{
+  return(
+    <Hai loc={temp.igsrc} len={temp.ht}/>
+  );
+}
 
 
 reactDom.render(
   <>
-    
+    {photos.map(iterate)}
   </>
   ,document.getElementById('root')
 );

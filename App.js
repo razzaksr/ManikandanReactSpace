@@ -1,5 +1,9 @@
 import react from 'react';
 import reactDom from 'react-dom';
+
+
+// POC on import, Export and Components
+/*
 import Kart from './Kart';
 
 function App()
@@ -12,6 +16,7 @@ function App()
   );
 }
 export default App;
+*/
 
 // Detail on import and export
 /* 
