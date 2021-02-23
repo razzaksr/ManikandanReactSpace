@@ -1,5 +1,68 @@
 import react from 'react';
 import reactDom from 'react-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+// Cards
+reactDom.render(
+  <>
+    <div className="container-fluid padding mt-lg-5">
+      <div className="row padding">
+        <div className="col-md-4">
+          <div className="card text-secondary">
+            <img src="https://picsum.photos/id/237/200/300" style={{width:'398px',height:'223px'}} className="card-image"/>
+            <div className="card-info">
+              <h4 className="card-title">Pet Animal</h4>
+              
+              <p className="card-text">Dog is very appropriate pet animal for human</p>
+              <a href="#" className="btn btn-outline-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card text-secondary">
+            <img src="https://picsum.photos/id/0/5616/3744" style={{width:'398px',height:'223px'}} className="card-image"/>
+            <div className="card-info">
+              <h4 className="card-title">Laptop</h4>
+              
+              <p className="card-text">Laptop very mandatory for all</p>
+              <a href="#" className="btn btn-outline-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card text-secondary">
+            <img src="https://picsum.photos/id/1/5616/3744" style={{width:'398px',height:'223px'}} className="card-image"/>
+            <div className="card-info">
+              <h4 className="card-title">Work From Home</h4>
+              
+              <p className="card-text">Once WFH was dream of IT people but today its disaster</p>
+              <a href="#" className="btn btn-outline-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </>
+  ,document.getElementById('root')
+);
+
+/* 
+//Simple Boostrap
+reactDom.render(
+  <>
+    <a href="https://www.linkedin.com" className="btn btn-outline-dark">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-light">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-secondary">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-success">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-warning">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-info">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-danger">IN</a>
+    <a href="https://www.linkedin.com" className="btn btn-outline-primary">IN</a>
+  </>
+  ,document.getElementById('root')
+); */
+
 
 /* 
 // Array Mapping
@@ -19,6 +82,10 @@ const fit=hey.map((temp)=>{
 );
  */
 
+
+
+/* 
+// Props with proper example
 import photos from './Feed';
 import Hai from './Hai'
 
@@ -32,11 +99,22 @@ function iterate(temp)
 
 reactDom.render(
   <>
-    {photos.map(iterate)}
+
+    {photos.map(iterate)} 
+
+    {/* 
+    <Hai loc={photos[0].igsrc} len={photos[0].ht}/>
+    <Hai loc={photos[1].igsrc} len={photos[1].ht}/>
+    <Hai loc={photos[2].igsrc} len={photos[2].ht}/>
+    <Hai loc={photos[3].igsrc} len={photos[3].ht}/> */
+
+    
+    /* <Hai loc="https://picsum.photos/id/237/200/300" len="200px"/>
+    <Hai loc="https://picsum.photos/id/1/5616/3744" len="200px"/> 
   </>
   ,document.getElementById('root')
 );
-
+*/
 
 // POC on import,export aand Components
 /*
