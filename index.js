@@ -3,50 +3,65 @@ import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
+// Card POC on Props and debug
+import CARD from './CARD';
+import {decor,data} from './Info';
+
+function each(information)
+{
+  return(
+    <CARD key={information.id} location={information.loc} title={information.tit} content={information.cont} decoration={decor}/>
+  );
+}
+
 // Cards
 reactDom.render(
   <>
     <div className="container-fluid padding mt-lg-5">
       <div className="row padding">
-        <div className="col-md-4">
-          <div className="card text-secondary">
-            <img src="https://picsum.photos/id/237/200/300" style={{width:'398px',height:'223px'}} className="card-image"/>
-            <div className="card-info">
-              <h4 className="card-title">Pet Animal</h4>
-              
-              <p className="card-text">Dog is very appropriate pet animal for human</p>
-              <a href="#" className="btn btn-outline-primary">Know More</a>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card text-secondary">
-            <img src="https://picsum.photos/id/0/5616/3744" style={{width:'398px',height:'223px'}} className="card-image"/>
-            <div className="card-info">
-              <h4 className="card-title">Laptop</h4>
-              
-              <p className="card-text">Laptop very mandatory for all</p>
-              <a href="#" className="btn btn-outline-primary">Know More</a>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card text-secondary">
-            <img src="https://picsum.photos/id/1/5616/3744" style={{width:'398px',height:'223px'}} className="card-image"/>
-            <div className="card-info">
-              <h4 className="card-title">Work From Home</h4>
-              
-              <p className="card-text">Once WFH was dream of IT people but today its disaster</p>
-              <a href="#" className="btn btn-outline-primary">Know More</a>
-            </div>
-          </div>
-        </div>
+        {data.map(each)}
       </div>
     </div>
   </>
   ,document.getElementById('root')
 );
 
+/* 
+//Fat arrow sample
+import {Head, Para} from './Fats'
+
+reactDom.render(
+  <>
+    <Para text="Demonstration of Normal function call through components and props"/>
+    <Head text="Constant Fat arrow demonstrated here" mod="text-primary mt-5 text-padding bg-danger"/>
+  </>
+  ,document.getElementById('root')
+);
+ */
+/*  
+// Card POC on Props
+import CARD from './CARD';
+import {decor,data} from './Info';
+
+function each(information)
+{
+  return(
+    <CARD location={information.loc} title={information.tit} content={information.cont} decoration={decor}/>
+  );
+}
+
+// Cards
+reactDom.render(
+  <>
+    <div className="container-fluid padding mt-lg-5">
+      <div className="row padding">
+        {data.map(each)}
+      </div>
+    </div>
+  </>
+  ,document.getElementById('root')
+);
+ */
 /* 
 //Simple Boostrap
 reactDom.render(
