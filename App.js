@@ -1,6 +1,50 @@
-import react from 'react';
+import react, { useState } from 'react';
 import reactDom from 'react-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+/* 
+//Hooks
+
+const App=()=>{
+
+  let time=new Date().toLocaleTimeString();
+
+  let [newtime,setTime]=new useState(time);
+
+  const newstime=()=>{
+    setTime(new Date().toLocaleTimeString());
+  }
+
+  setInterval(newstime,1000);
+
+  return(
+    <>
+      <div className="text-center mt-lg-5 padding">
+        <h1 className="display-4">{newtime}</h1>
+      </div>
+    </>
+  );
+} */
+/* const App=()=>{
+  const value=10;
+  // syntax of hooks: let object[var,functions/iterate]=new useState(initialization)
+  let [newvalue,setValue]=new useState(value);
+
+  const pressed=()=>{
+    setValue(newvalue+10);
+  }
+
+  return(
+    <>
+      <div className="text-center mt-lg-5 padding">
+        <h1 className="display-4">{newvalue}</h1>
+        <button className="btn btn-outline-primary" onClick={pressed}>Dare to click</button>
+      </div>
+    </>
+  );
+} */
+
+//export default App;
 
 // POC on import, Export and Components
 /*

@@ -3,6 +3,17 @@ import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
+/* 
+// Hooks
+import App from './App';
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
+/* 
 // Card POC on Props and debug
 import CARD from './CARD';
 import {decor,data} from './Info';
@@ -25,7 +36,7 @@ reactDom.render(
   </>
   ,document.getElementById('root')
 );
-
+ */
 /* 
 //Fat arrow sample
 import {Head, Para} from './Fats'
