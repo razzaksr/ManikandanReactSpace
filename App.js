@@ -1,7 +1,101 @@
 import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import List from './List';
+import Kart from './Kart';
 
+
+
+// Hooks with form fields
+const App=()=>{
+
+  const [name,setName]=useState("");
+  const [status,setStatus]=useState("");
+  const change=(event)=>{
+    setName(event.target.value);
+  }
+
+  const click=()=>{
+    //console.log(name+" "+pass);
+    (name==='manikandan' && pass==='salem')?setStatus(name+" logged successully"):setStatus(name+" logging failed");
+  }
+
+
+  const [pass,setPass]=useState("");
+  const passchange=(event)=>{
+    //console.log(event.target.value);
+    setPass(event.target.value);
+  }
+  
+
+  return(
+    <>
+      <div>
+        <h1 className="display-2">Hello {status}</h1>
+        <input type="text" onChange={change} value={name}/>
+        <input type="password" onChange={passchange}/> 
+        <button onClick={click}> Submit </button>
+      </div>
+    </>
+  );
+}
+
+
+
+/* 
+// Hooks with form field
+const App=()=>{
+
+  const [name,setName]=useState("");
+  const [fullname,setFullname]=useState("")
+
+  const change=(event)=>{
+    setName(event.target.value);
+  }
+
+  const click=()=>{
+    setFullname(name);
+  }
+
+  return(
+    <>
+      <div>
+        <h1 className="display-2">Hello {fullname}</h1>
+        <input type="text" onChange={change} value={name}/>
+        <button onClick={click}> Submit </button>
+      </div>
+    </>
+  );
+}
+ */
+
+/* 
+//Hooks with events
+const App=()=>{
+
+  const [bg,setBg]=useState('purple');
+  const [content,setContent]=useState('Hello there?');
+
+
+  const eve=()=>{
+    setBg('green');
+    setContent('How you doing?');
+  }
+
+  const doub=()=>{
+    setBg('purple');
+    setContent('Hello there?');
+  }
+
+  return(
+    <>
+      <div className="container" style={{backgroundColor:bg}}>
+        <button className="btn btn-light badge-pill" onClick={eve} onDoubleClick={doub}>{content}</button>
+      </div>
+    </>
+  );
+} */
+export default App;
 /* 
 //Hooks
 

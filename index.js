@@ -1,8 +1,37 @@
 import react from 'react';
 import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import App from './App';
 
 
+// Hooks with form field's
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+
+
+/* 
+// Hooks with form field
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
+
+/* 
+// Hooks with events
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
 /* 
 // Hooks
 import App from './App';
