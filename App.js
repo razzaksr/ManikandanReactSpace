@@ -1,11 +1,77 @@
 import react, { useState } from 'react';
 import reactDom from 'react-dom';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import List from './List';
 import Kart from './Kart';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 
+// Hooks with form's
+const App=()=>{
+
+  const [login,validLogin]=useState({
+    id:"",
+    pwd:""
+  });
+  
+  const change=(event)=>{
+    //console.log(event.target.name);
+    //console.log(event.target.value);
+
+    const gotName=event.target.name;
+    const gotValue=event.target.value;
+    
+
+    validLogin((prev)=>
+    {
+      if(gotName==='user')
+      {
+        //console.log(gotName+" "+gotValue);
+        return{
+          id:gotValue,
+          pwd:prev.pwd,
+        };
+      }
+      else
+      {
+        return{id:prev.id,
+          pwd:gotValue,
+        }
+      }
+    })
+    console.log(login.id+" "+login.pwd);
+  };
+
+  const click=(event)=>{
+    event.preventDefault();
+    //console.log(login.id+" "+login.pwd);
+    //console.log(name+" "+pass);
+    if(login.id==='razak' && login.pwd==='mohamed')
+    {
+      window.location.assign('https://www.google.com');
+    }
+    else{
+      window.location.assign('https://www.linkedin.com');
+    }
+  }
+  
+
+  return(
+    <>
+      <div>
+        <form name="log" onSubmit={click}>
+          <h1 className="display-2">Hello </h1>
+          <input type="text" name="user" onChange={change}/>
+          <input type="password" name="pass" onChange={change}/> 
+          <button type="submit"> Submit </button>
+        </form>
+      </div>
+    </>
+  );
+}
+
+
+
+/* 
 // Hooks with form fields
 const App=()=>{
 
@@ -40,7 +106,7 @@ const App=()=>{
   );
 }
 
-
+ */
 
 /* 
 // Hooks with form field

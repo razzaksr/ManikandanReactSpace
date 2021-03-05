@@ -4,13 +4,24 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 
 
-// Hooks with form field's
+// Hooks with form's
 reactDom.render(
   <>
     <App/>
   </>
   ,document.getElementById('root')
 );
+
+
+
+/* 
+// Hooks with form field's
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+); */
 
 
 /* 
