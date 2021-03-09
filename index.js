@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 
 
-// Hooks with form's
+
 reactDom.render(
   <>
     <App/>
@@ -12,6 +12,27 @@ reactDom.render(
   ,document.getElementById('root')
 );
 
+
+
+/* 
+// Hooks with form's to handle complex hooks
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
+
+/* 
+// Hooks with form's
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
 
 
 /* 

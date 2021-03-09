@@ -5,6 +5,216 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 
+// Hooks with form's handle complex hooks optimise using spread(...) operator
+const App=()=>{
+
+  const [register,comRegister]=useState({
+    id:"",
+    pwd:"",
+    con:"",
+    mob:0,
+    mail:""
+  });
+
+  const [state,updateState]=useState("");
+  
+  const change=(event)=>{
+
+  const {name,value}=event.target;
+
+  //console.log(name,value);
+    
+
+    comRegister((prev)=>
+    {
+      return {
+        ...prev,
+        [name]:value
+      }
+    })
+  };
+
+  const click=(event)=>{
+    event.preventDefault();
+    //console.log(register.id+" "+register.mob+" "+register.mail);
+    if(register.pwd==register.con)
+    {
+      alert("Registration submited successfully by "+register.id);
+      updateState(register.id+" "+register.mob+" "+register.mail);
+    }
+    else
+    {
+      alert("Password mismatch");
+    }
+  }
+  
+
+  return(
+    <>
+      <div>
+        <form name="reg" onSubmit={click}>
+          <h1 className="display-4">Registration Process </h1>
+          <input type="text" name="id" onChange={change}/>
+          <input type="password" name="pwd" onChange={change}/> 
+          <input type="password" name="con" onChange={change}/>
+          <input type="number" name="mob" onChange={change}/>
+          <input type="email" name="mail" onChange={change}/>
+          <button type="submit"> Submit </button>
+          <h2 className="justify-content-center text-success">{state}</h2>
+        </form>
+      </div>
+    </>
+  );
+}
+
+
+
+/* 
+// Object destructuring
+const App=()=>{
+  var hai=[12,45,1,56,13,78,24,12,66];
+
+  // destructuring
+  let [one,,,,,,,two,three]=hai;
+
+  console.log(one+" "+two+" "+three);
+
+  // ...
+
+  let [check,...hey]=hai;
+  console.log(check);
+  console.log(hey);
+
+
+  const srcs={
+    name:"razak mohamed s",
+    place:"salem"
+  }
+
+
+  let cv={
+    exp:10,
+    contact:867002959,
+    email:'razzaksr@gmail.com',
+    ...srcs
+  }
+
+  console.log(cv);
+}
+ */
+
+/* 
+// Hooks with form's handle complex hooks
+const App=()=>{
+
+  const [register,comRegister]=useState({
+    id:"",
+    pwd:"",
+    con:"",
+    mob:"",
+    mail:""
+  });
+
+  const [state,updateState]=useState("");
+  
+  const change=(event)=>{
+
+    const gotName=event.target.name;
+    const gotValue=event.target.value;
+    
+
+    comRegister((prev)=>
+    {
+      if(gotName==='user')
+      {
+        return{
+          id:gotValue,
+          pwd:prev.pwd,
+          con:prev.con,
+          mob:prev.mob,
+          mail:prev.mail
+        };
+      }
+      else if(gotName==='conpass')
+      {
+        return{
+          id:prev.id,
+          pwd:prev.pwd,
+          con:gotValue,
+          mob:prev.mob,
+          mail:prev.mail
+        };
+      }
+      else if(gotName==='contact')
+      {
+        return{
+          id:prev.id,
+          pwd:prev.pwd,
+          con:prev.con,
+          mob:gotValue,
+          mail:prev.mail
+        };
+      }
+      else if(gotName==='email')
+      {
+        return{
+          id:prev.id,
+          pwd:prev.pwd,
+          con:prev.con,
+          mob:prev.mob,
+          mail:gotValue
+        };
+      }
+      else if(gotName==='pass')
+      {
+        return{
+          id:prev.id,
+          pwd:gotValue,
+          con:prev.con,
+          mob:prev.mob,
+          mail:prev.mail
+        }
+      }
+    })
+  };
+
+  const click=(event)=>{
+    event.preventDefault();
+    if(register.pwd==register.con)
+    {
+      alert("Registration submited successfully by "+register.id);
+      updateState(register.id+" "+register.mob+" "+register.mail);
+    }
+    else
+    {
+      alert("Password mismatch");
+    }
+  }
+  
+
+  return(
+    <>
+      <div>
+        <form name="reg" onSubmit={click}>
+          <h1 className="display-4">Registration Process </h1>
+          <input type="text" name="user" onChange={change}/>
+          <input type="password" name="pass" onChange={change}/> 
+          <input type="password" name="conpass" onChange={change}/>
+          <input type="number" name="contact" onChange={change}/>
+          <input type="email" name="email" onChange={change}/>
+          <button type="submit"> Submit </button>
+          <h2 className="justify-content-center text-success">{state}</h2>
+        </form>
+      </div>
+    </>
+  );
+}
+
+ */
+
+
+
+/* 
 // Hooks with form's
 const App=()=>{
 
@@ -69,7 +279,7 @@ const App=()=>{
   );
 }
 
-
+ */
 
 /* 
 // Hooks with form fields
