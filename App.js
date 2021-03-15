@@ -2,9 +2,78 @@ import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ToDoItem from './ToDoItem';
 
 
+// ToDo POC
+const App=()=>{
+  const[inp,setInp]=useState("");
+  const[mylist,setMylist]=useState([]);
 
+
+  const modify=(event)=>{
+    setInp(event.target.value);
+  }
+
+  const onAdd=()=>{
+    setMylist((old)=>{
+      return [...old,inp]
+    });
+    setInp('');
+  }
+
+  const del=(id)=>{
+    console.log('delete called '+id);
+    setMylist((old)=>{
+      return old.filter((ele,index)=>{
+        return index!==id;
+      })
+    });
+  }
+
+
+  return(
+    <>
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-6 mt-5 text-center">
+            <div className="card bg-light">
+              <h1 className="card-title">Digital To do</h1>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col">
+                    <input type="text" 
+                    name="data" id="data" 
+                    placeholder="Tell what you wish to add" 
+                    className="form-control"
+                    onChange={modify}
+                    value={inp}/>
+                  </div>
+                  <div className="col">
+                    <button className="btn btn-outline-primary" onClick={onAdd}>Add</button>
+                  </div>
+                </div>
+                <hr className="my-4"/>
+                <div className="text-danger text-left">
+                  <ol>
+                    {/* <li>{mylist}</li> */}
+                    {mylist.map((element,index)=>{
+                      /* return(<li>{element}</li>); */
+                      return (<ToDoItem text={element} id={index} key={index} onSelect={del}/>);
+                    })}
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+/* 
 // Hooks with form's handle complex hooks optimise using spread(...) operator
 const App=()=>{
 
@@ -67,7 +136,7 @@ const App=()=>{
   );
 }
 
-
+ */
 
 /* 
 // Object destructuring

@@ -5,6 +5,8 @@ import App from './App';
 
 
 
+
+
 reactDom.render(
   <>
     <App/>
@@ -12,6 +14,18 @@ reactDom.render(
   ,document.getElementById('root')
 );
 
+
+
+
+/* 
+// Hooks with form's handle complex hooks optimise using spread(...) operator
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
 
 
 /* 
