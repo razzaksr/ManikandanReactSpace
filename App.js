@@ -2,8 +2,59 @@ import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import ToDoItem from './ToDoItem';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 
+
+const App=()=>{
+
+
+  const[number,setNumber]=useState(0);
+
+  const plus=()=>{
+    setNumber(number+1);
+  }
+
+
+  const minus=()=>{
+    if(number>0)
+    {
+      setNumber(number-1);
+    }
+    else{
+      alert("Range exceed");
+      setNumber(0);
+    }
+  }
+
+
+  return(
+    <>
+      <div className="container-fluid">
+        <div style={{marginTop:"200px"}} className="row padding ml-5 justify-content-center">
+          <div className="col-6 card " >
+            <h2 className="card-title display-6 text-center">Meter</h2>
+            <div className="card-body">
+              <h3 className="bg-warning text-primary text-center">{number}</h3>
+              <div className="row">
+                <div className="col text-center">
+                  <AddCircleIcon onClick={plus} className="w-25 h-100 text-success"/>
+                </div>
+                <div className="col text-center">
+                  <RemoveCircleIcon onClick={minus} className="w-25 h-100 text-danger"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+/* 
+import ToDoItem from './ToDoItem';
 
 // ToDo POC
 const App=()=>{
@@ -23,7 +74,7 @@ const App=()=>{
   }
 
   const del=(id)=>{
-    console.log('delete called '+id);
+    //console.log('delete called '+id);
     setMylist((old)=>{
       return old.filter((ele,index)=>{
         return index!==id;
@@ -55,13 +106,12 @@ const App=()=>{
                 </div>
                 <hr className="my-4"/>
                 <div className="text-danger text-left">
-                  <ol>
-                    {/* <li>{mylist}</li> */}
+                  <ul type="square">
                     {mylist.map((element,index)=>{
-                      /* return(<li>{element}</li>); */
+                      // return(<li>{element}</li>);
                       return (<ToDoItem text={element} id={index} key={index} onSelect={del}/>);
                     })}
-                  </ol>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -72,7 +122,7 @@ const App=()=>{
   );
 }
 
-
+ */
 /* 
 // Hooks with form's handle complex hooks optimise using spread(...) operator
 const App=()=>{
