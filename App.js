@@ -2,10 +2,95 @@ import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Clock from 'react-digital-clock';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+
+
+//digital clock via npmjs
+const App=()=>{
+  return(
+    <>
+      <div className="row bg-primary align-self-center">
+        <Clock />
+        <CountdownCircleTimer
+          isPlaying
+          duration={10}
+          colors={[
+            ['#004777', 0.25],
+            ['#F7B801', 0.25],
+            ['#A30000', 0.25],
+            ['#F7B801', 0.25],
+          ]}
+        >
+          {({ remainingTime }) => remainingTime}
+        </CountdownCircleTimer>
+      </div>
+    </>
+  );
+}
+
+
+
+/* 
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+// Matrial UI Advanced
+const App=()=>{
 
 
+  const[number,setNumber]=useState(0);
+
+  const plus=()=>{
+    setNumber(number+1);
+  }
+
+
+  const minus=()=>{
+    if(number>0)
+    {
+      setNumber(number-1);
+    }
+    else{
+      alert("Range exceed");
+      setNumber(0);
+    }
+  }
+
+
+  return(
+    <>
+      <div className="container-fluid">
+        <div style={{marginTop:"200px"}} className="row padding ml-5 justify-content-center">
+          <div className="col-6 card " >
+            <h2 className="card-title display-6 text-center">Meter</h2>
+            <div className="card-body">
+              <TextField id="standard-basic" value={number} className="w-100 "/>
+              <div className="row">
+                <div className="col text-center">
+                  <Button  onClick={plus} className="text-success bg-aqua">
+                    <AddCircleIcon/>
+                  </Button>
+                </div>
+                <div className="col text-center">
+                  <Button  onClick={minus} className="text-danger bg-aqua">
+                    <RemoveCircleIcon/>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+ */
+
+
+/* 
+// Matrial UI Intro
 const App=()=>{
 
 
@@ -51,7 +136,7 @@ const App=()=>{
     </>
   );
 }
-
+ */
 
 /* 
 import ToDoItem from './ToDoItem';

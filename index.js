@@ -5,8 +5,7 @@ import App from './App';
 
 
 
-
-
+//digital clock via npmjs
 reactDom.render(
   <>
     <App/>
@@ -15,6 +14,27 @@ reactDom.render(
 );
 
 
+
+/* 
+// inc/dec meter
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
+
+/* 
+// ToDo POC
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+
+ */
 
 
 /* 
