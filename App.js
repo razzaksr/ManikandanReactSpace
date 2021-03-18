@@ -2,11 +2,114 @@ import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// Bootstrap inbuilt card group
+const App=()=>{
+  return(
+    <>
+      <div className="container-fluid">
+        <h1 className="display-4 text-center text-primary">Bootstrap Card group</h1>
+        <div class="card-group my-5">
+          <div class="card mr-4">
+            <img class="card-img-top" height="200px" src="https://picsum.photos/seed/picsum/200/300" alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" height="200px" src="https://picsum.photos/200/300?grayscale" alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <img class="card-img-top" height="200px" src="https://picsum.photos/200/300/?blur" alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+/* 
+import Button from '@material-ui/core/Button';
+import ListItems from './ListItems';
+import TextField from '@material-ui/core/TextField';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+// ToDoList Strikking
+const App=()=>{
+
+  const[inp,setInp]=useState("");
+  const[mylist,setMylist]=useState([]);
+
+
+  const modify=(event)=>{
+    setInp(event.target.value);
+  }
+
+  const onAdd=()=>{
+    setMylist((old)=>{
+      return [...old,inp]
+    });
+    setInp('');
+  }
+  return(
+    <>
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-6 mt-5 text-center">
+            <div className="card bg-light">
+              <h1 className="card-title">Digital To do</h1>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col">
+                    <TextField type="text"
+                    id="standard-basic"  
+                    name="data" id="data" 
+                    placeholder="Tell what you wish to add" 
+                    className="form-control"
+                    onChange={modify}
+                    value={inp}/>
+                  </div>
+                  <div className="col">
+                    <Button className="btn btn-outline-primary" onClick={onAdd}>
+                      <AddCircleIcon/>
+                    </Button>
+                  </div>
+                </div>
+                <hr className="my-4"/>
+                <div className="text-danger text-left">
+                  
+                    {mylist.map((element,index)=>{
+                      return (<ListItems text={element} id={index} key={index} />);
+                    })}
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+ */
+/* 
+//digital clock via npmjs
 import Clock from 'react-digital-clock';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-
-//digital clock via npmjs
 const App=()=>{
   return(
     <>
@@ -28,7 +131,7 @@ const App=()=>{
     </>
   );
 }
-
+ */
 
 
 /* 
