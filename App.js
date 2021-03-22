@@ -2,7 +2,27 @@ import react, { useState } from 'react';
 import reactDom from 'react-dom';
 import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Heading from './Heading';
+import Footing from './Footing';
+import NewNote from './NewNote';
+import Note from './Note';
 
+
+
+const App=()=>{
+  return (
+    <>
+      <Heading/>
+      <NewNote/>
+      <Note/>
+      <Footing/>
+    </>
+  );
+}
+
+
+
+/* 
 // Bootstrap inbuilt card group
 const App=()=>{
   return(
@@ -40,7 +60,7 @@ const App=()=>{
   );
 }
 
-
+ */
 /* 
 import Button from '@material-ui/core/Button';
 import ListItems from './ListItems';

@@ -5,7 +5,7 @@ import App from './App';
 
 
 
-//digital clock via npmjs
+// ToDoList Strikking
 reactDom.render(
   <>
     <App/>
@@ -14,6 +14,16 @@ reactDom.render(
 );
 
 
+/* 
+//digital clock via npmjs
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+
+ */
 
 /* 
 // inc/dec meter
