@@ -6,15 +6,74 @@ import Heading from './Heading';
 import Footing from './Footing';
 import NewNote from './NewNote';
 import Note from './Note';
+import Bin from './Bin';
+import Button from '@material-ui/core/Button';
+import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
 
 
 
 const App=()=>{
+
+  const[notes,setNotes]=useState([]);
+  const[history,setHistory]=useState([]);
+  const[binView,setBinView]=useState(false);
+
+  const insert=(data)=>{
+    setNotes((old)=>{
+      return [...old,data]
+    });
+    alert("Adding called");
+  }
+
+  const del=(id)=>{
+
+    setHistory((old)=>{
+      return [...old,notes[id]]
+    });
+
+    setNotes((old)=>{
+      return old.filter((ele,index)=>{
+        return index!==id;
+      })
+    });
+  }
+
+  const onBin=()=>{
+    /* alert("Bin clicked");
+    return (<Bin list={history}/>); */
+    setBinView(true);
+  }
+
   return (
     <>
       <Heading/>
-      <NewNote/>
-      <Note/>
+      <Button onClick={onBin}><DeleteSweepIcon/></Button>
+      <NewNote submit={insert}/>
+      <div className="row">
+      {notes.map(
+        (ele,ind)=>{
+          return(<Note key={ind} id={ind} tit={ele.title} des={ele.content} onDelete={del} born={ele.date.toString()}/>)
+        }
+      )}
+      </div>
+      {binView?
+      <>
+      <h1 className="display-1">BinView</h1>
+      <div className="row">
+        {
+          
+            
+          history.map(
+              (ele,ind)=>{
+                return(<Note key={ind} id={ind} tit={ele.title} des={ele.content} born={ele.date.toString()}/>)
+              }
+            )
+            
+          
+        }
+      </div>
+      </>
+      :null}
       <Footing/>
     </>
   );

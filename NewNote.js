@@ -6,15 +6,16 @@ import Button from '@material-ui/core/Button';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
-const NewNote=()=>{
+const NewNote=(props)=>{
 
 
-    const[notes,setNotes]=useState([]);
+    const[visible,setVisible]=useState(false)
 
 
     const [data,setData]=useState({
         title:"",
-        content:""
+        content:"",
+        date:[new Date().toLocaleDateString(),new Date().toLocaleTimeString()]
     });
     
     
@@ -32,16 +33,14 @@ const NewNote=()=>{
 
 
     const addTo=()=>{
-        setNotes((old)=>{
-            return [...old,data]
-          });
-          setData(()=>{
-              return{
-                  title:"",
-                  content:""
-              }
-          });
-          alert("Adding called");
+        props.submit(data)
+        setData(()=>{
+            return{
+                title:"",
+                content:"",
+                date:[new Date().toLocaleDateString(),new Date().toLocaleTimeString()]
+            }
+        });
     }
 
 
@@ -51,8 +50,9 @@ const NewNote=()=>{
                 <div className="mt-3">
                     <div className="row">
                         <div className="card" style={{marginLeft:'250px',borderRadius:'14px',borderColor:'blue'}}>
-                            <div className="card-body" style={{width:'600px'}}>
+                            <div className="card-body" style={{width:'600px'}} onDoubleClick={()=>{setVisible(false)}}>
                                 <form>
+                                    {visible?
                                     <TextField 
                                     id="filled-basic" 
                                     label="title" 
@@ -62,24 +62,25 @@ const NewNote=()=>{
                                     className="w-100"
                                     onChange={inEvent}
                                     value={data.title}/>
-
+                                    :null}
                                     <br/>
-
                                     <textarea className="w-100 mt-3"
                                     name="content"
                                     onChange={inEvent}
                                     placeholder="Content"
                                     value={data.content}
+                                    onClick={()=>{setVisible(true)}}
                                     />
 
                                     <br/>
-
+                                    {visible?
                                     <Button 
                                     style={{marginLeft:'450px'}} 
                                     className="text-success bg-warning"
                                     onClick={addTo}>
                                         <AddCircleIcon/>
                                     </Button>
+                                    :null}
                                 </form>
                             </div>
                         </div>

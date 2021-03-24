@@ -5,7 +5,7 @@ import App from './App';
 
 
 
-// ToDoList Strikking
+// 
 reactDom.render(
   <>
     <App/>
@@ -13,6 +13,16 @@ reactDom.render(
   ,document.getElementById('root')
 );
 
+
+/* 
+// ToDoList Strikking
+reactDom.render(
+  <>
+    <App/>
+  </>
+  ,document.getElementById('root')
+);
+ */
 
 /* 
 //digital clock via npmjs
