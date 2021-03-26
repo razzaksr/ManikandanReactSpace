@@ -7,7 +7,7 @@ import Images from './Images/avlogo.png'
 const Heading=()=>{
     return(
         <>
-            <div className="container-fluid bg-secondary">
+            <div className="container-fluid bg-dark">
                 <div className="row">
                     <img src={Images} height="80px" width="100px" className="ml-5"/>
                     <h1 className="ml-5 display-4 text-light"> Zealous Note </h1>

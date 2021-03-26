@@ -3,10 +3,10 @@ import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
+import UpdateIcon from '@material-ui/icons/Update';
 
 
-const NewNote=(props)=>{
+const UpdateNote=(props)=>{
 
     
 
@@ -14,9 +14,9 @@ const NewNote=(props)=>{
     
 
     const [data,setData]=useState({
-        title:"",
-        content:"",
-        date:[new Date().toLocaleDateString(),new Date().toLocaleTimeString()]
+        title:props.update.title,
+        content:props.update.content,
+        date:props.update.date
     });
 
 
@@ -39,7 +39,7 @@ const NewNote=(props)=>{
 
 
     const addTo=()=>{
-       props.submit(data)
+        props.alter([data,props.id])
         setData(()=>{
             return{
                 title:"",
@@ -53,7 +53,7 @@ const NewNote=(props)=>{
     return(
         <>
             <div className="container-fluid">
-                <h1 className="text-center text-success">New Note Creation</h1>
+            <h1 className="text-center text-primary">Update Existing Note</h1>
                 <div className="mt-3">
                     <div className="row align-items-center justify-content-center">
                         {/* <div className="card" style={{marginLeft:'250px',borderRadius:'14px',borderColor:'blue'}}> */}
@@ -88,7 +88,7 @@ const NewNote=(props)=>{
                                     <Button 
                                     className="text-success bg-warning float-right"
                                     onClick={addTo}>
-                                        <AddCircleIcon/>
+                                        <UpdateIcon/>
                                     </Button>
                                     :null}
                                 </form>
@@ -102,4 +102,4 @@ const NewNote=(props)=>{
     );
 }
 
-export default NewNote;
+export default UpdateNote;

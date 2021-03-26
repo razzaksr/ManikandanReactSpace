@@ -3,11 +3,16 @@ import reactDom from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Button from '@material-ui/core/Button';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
 
 const Note=(props)=>{
 
     const hey=()=>{
         props.onDelete(props.id)
+    }
+
+    const up=()=>{
+        props.onEdit(props.id)
     }
 
     return(
@@ -20,6 +25,9 @@ const Note=(props)=>{
                         <p className="card-text float-right">{props.born}</p>
                         <Button className="bg-warning text-danger float-right" onClick={hey}>
                             <DeleteForeverIcon/>
+                        </Button>
+                        <Button className="float-left" onClick={up}>
+                            <EditIcon/>
                         </Button>
                     </div>
                 </div>

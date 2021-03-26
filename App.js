@@ -9,20 +9,34 @@ import Note from './Note';
 import Bin from './Bin';
 import Button from '@material-ui/core/Button';
 import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
+import UpdateNote from './UpdateNote';
 
 
-
+// Custom Google Keep App POC -- Done well manner
 const App=()=>{
 
   const[notes,setNotes]=useState([]);
   const[history,setHistory]=useState([]);
   const[binView,setBinView]=useState(false);
+  const[upView,setUpView]=useState(false)
+
+  const[index,setIndex]=useState();
 
   const insert=(data)=>{
     setNotes((old)=>{
       return [...old,data]
     });
     alert("Adding called");
+  }
+
+  const change=(srcs)=>{
+      //return [...old,data]
+      notes[srcs[1]].title=srcs[0].title
+      notes[srcs[1]].content=srcs[0].content
+      notes[srcs[1]].date=srcs[0].date
+    alert("update done");
+    setUpView(false);
+
   }
 
   const del=(id)=>{
@@ -44,15 +58,22 @@ const App=()=>{
     setBinView(true);
   }
 
+  const edit=(id)=>{
+    alert("Edit called in App.js");
+    setIndex(id);
+    setUpView(true)
+  }
+
   return (
     <>
       <Heading/>
       <Button onClick={onBin}><DeleteSweepIcon/></Button>
-      <NewNote submit={insert}/>
+      {upView?<UpdateNote alter={change} update={notes[index]} id={index}/>:<NewNote submit={insert}/>}
+      {/* <NewNote submit={insert} update={notes[index]}/> */}
       <div className="row">
       {notes.map(
         (ele,ind)=>{
-          return(<Note key={ind} id={ind} tit={ele.title} des={ele.content} onDelete={del} born={ele.date.toString()}/>)
+          return(<Note key={ind} id={ind} tit={ele.title} des={ele.content} onDelete={del} born={ele.date.toString()} onEdit={edit}/>)
         }
       )}
       </div>
