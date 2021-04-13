@@ -1,7 +1,33 @@
 import react, { useState } from 'react';
 import reactDom from 'react-dom';
-import Kart from './Kart';
+//import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import RouterComp1 from './RouterComp1';
+import RouterComp2 from './RouterComp2';
+import RouterComp3 from './RouterComp3';
+import { Route, Switch } from 'react-router';
+import NavMenus from './NavMenus';
+
+
+
+
+// React Router
+const App=()=>{
+  return(
+    <>
+      <div className="container">
+        <NavMenus/>
+        <Switch>
+          <Route exact path="/" component={RouterComp1}/>
+          <Route path="/two" component={RouterComp2}/>
+          <Route path="/three" component={RouterComp3}/>
+        </Switch>
+      </div>
+    </>
+  );
+}
+
+/* 
 import Heading from './Heading';
 import Footing from './Footing';
 import NewNote from './NewNote';
@@ -53,8 +79,7 @@ const App=()=>{
   }
 
   const onBin=()=>{
-    /* alert("Bin clicked");
-    return (<Bin list={history}/>); */
+    
     setBinView(true);
   }
 
@@ -69,7 +94,7 @@ const App=()=>{
       <Heading/>
       <Button onClick={onBin}><DeleteSweepIcon/></Button>
       {upView?<UpdateNote alter={change} update={notes[index]} id={index}/>:<NewNote submit={insert}/>}
-      {/* <NewNote submit={insert} update={notes[index]}/> */}
+      
       <div className="row">
       {notes.map(
         (ele,ind)=>{
@@ -100,7 +125,7 @@ const App=()=>{
   );
 }
 
-
+ */
 
 /* 
 // Bootstrap inbuilt card group
