@@ -1,6 +1,6 @@
 
 
-const RouterComp1=()=>{
+const RouterComp1=(props)=>{
     return(
         <>
             <div className="row justify-content-center">
@@ -8,7 +8,7 @@ const RouterComp1=()=>{
                     <h1 className="card-title">Router One</h1>
                     <hr className="my-4"/>
                     <div className="card-body">
-                        <img src="Images/avlogo.png" alt="pic"/>
+                        <img src={props.pic} alt="pic"/>
                     </div>
                 </div>
             </div>

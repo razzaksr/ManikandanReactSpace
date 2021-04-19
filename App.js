@@ -7,6 +7,7 @@ import RouterComp2 from './RouterComp2';
 import RouterComp3 from './RouterComp3';
 import { Route, Switch } from 'react-router';
 import NavMenus from './NavMenus';
+import ErrorComp from './ErrorComp';
 
 
 
@@ -18,9 +19,10 @@ const App=()=>{
       <div className="container">
         <NavMenus/>
         <Switch>
-          <Route exact path="/" component={RouterComp1}/>
-          <Route path="/two" component={RouterComp2}/>
+          <Route exact path="/" component={()=><RouterComp1 pic="Images/jd.jpg"/>}/>
+          <Route path="/two" render={()=><RouterComp2 pic="Images/business.jpg"/>}/>
           <Route path="/three" component={RouterComp3}/>
+          <Route component={ErrorComp}/>
         </Switch>
       </div>
     </>
