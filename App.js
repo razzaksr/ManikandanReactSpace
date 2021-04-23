@@ -8,8 +8,28 @@ import RouterComp3 from './RouterComp3';
 import { Route, Switch } from 'react-router';
 import NavMenus from './NavMenus';
 import ErrorComp from './ErrorComp';
+import Searching from './Searching';
 
-// React Router useParam hook
+// React Router search engine
+const App=()=>{
+  return(
+    <>
+      <div className="container">
+        <NavMenus/>
+        <Switch>
+          <Route exact path="/" component={()=><RouterComp1 pic="Images/jd.jpg"/>}/>
+          <Route path="/two/:zealous" render={()=><RouterComp2 pic="Images/business.jpg" data="hai"/>}/>
+          <Route path="/find" component={Searching}/>
+          <Route path="/three" component={RouterComp3}/>
+          <Route component={ErrorComp}/>
+        </Switch>
+      </div>
+    </>
+  );
+}
+
+/* 
+// React Router useParam,useLocation,useHistory hook
 const App=()=>{
   return(
     <>
@@ -25,8 +45,7 @@ const App=()=>{
     </>
   );
 }
-
-
+ */
 /* // React Router
 const App=()=>{
   return(

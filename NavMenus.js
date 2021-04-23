@@ -19,6 +19,9 @@ const NavMenus=()=>{
                                 <NavLink className="btn btn-outline-dark badge-pill mr-lg-5" activeClassName="bg-dark text-light" exact to="/two">Two</NavLink>
                             </li>
                             <li className="navbar-item" id="menu-gap">
+                                <NavLink className="btn btn-outline-success badge-pill mr-lg-5" activeClassName="bg-dark text-light" exact to="/find">Search</NavLink>
+                            </li>
+                            <li className="navbar-item" id="menu-gap">
                                 <NavLink className="btn btn-outline-dark badge-pill" activeClassName="bg-dark text-light" exact to="/three">Three</NavLink>
                             </li>
                         </ul>
