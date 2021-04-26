@@ -1,11 +1,33 @@
-import react, { useState } from 'react';
+import react from 'react';
 import reactDom from 'react-dom';
 //import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Redirect, Route, Switch } from 'react-router';
+import AvengerMenu from './AvengerMenu';
+import AvengerHome from './AvengerHome';
+
+const App=()=>{
+  return(
+    <>
+      <AvengerMenu/>
+      <Switch>
+        <Route exact path="/" component={AvengerHome}/>
+        {/* <Route exact path="/versons" component={}/>
+        <Route exact path="/features" component={}/>
+        <Route exact path="/services" component={}/>
+        <Route exact path="/connect" component={}/> */}
+        <Redirect to="/"/>
+      </Switch>
+    </>
+  );
+}
+
+/* 
+import react, { useState } from 'react';
+import reactDom from 'react-dom';
 import RouterComp1 from './RouterComp1';
 import RouterComp2 from './RouterComp2';
 import RouterComp3 from './RouterComp3';
-import { Route, Switch } from 'react-router';
 import NavMenus from './NavMenus';
 import ErrorComp from './ErrorComp';
 import Searching from './Searching';
@@ -27,7 +49,7 @@ const App=()=>{
     </>
   );
 }
-
+ */
 /* 
 // React Router useParam,useLocation,useHistory hook
 const App=()=>{

@@ -19,7 +19,6 @@ const RouterComp3=()=>{
                 </div>
             </div>
             <a href="#" class="btn btn-outline-primary" onClick={()=>hist.goBack()}>Go back</a>
-            <a href="#" class="btn btn-outline-warning" onClick={()=>hist.goForward()}>Go forward</a>
             <a href="#" class="btn btn-outline-dark" onClick={()=>hist.push('/')}>Go Home</a>
         </>
     );
