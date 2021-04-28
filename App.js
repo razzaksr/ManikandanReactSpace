@@ -5,6 +5,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Redirect, Route, Switch } from 'react-router';
 import AvengerMenu from './AvengerMenu';
 import AvengerHome from './AvengerHome';
+import Versions from './Versions';
+import Features from './Features';
+import Services from './Services';
+import Connect from './Connect';
 
 const App=()=>{
   return(
@@ -12,10 +16,10 @@ const App=()=>{
       <AvengerMenu/>
       <Switch>
         <Route exact path="/" component={AvengerHome}/>
-        {/* <Route exact path="/versons" component={}/>
-        <Route exact path="/features" component={}/>
-        <Route exact path="/services" component={}/>
-        <Route exact path="/connect" component={}/> */}
+        <Route exact path="/versions" component={Versions}/>
+        <Route exact path="/features" component={Features}/>
+        <Route exact path="/services" component={Services}/>
+        <Route exact path="/connect" component={Connect}/>
         <Redirect to="/"/>
       </Switch>
     </>

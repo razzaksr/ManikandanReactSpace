@@ -1,11 +1,31 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Nav, Navbar} from 'react-bootstrap';
 
 const AvengerMenu=()=>{
     return(
         <>
-            <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <Navbar bg="light" expand="md">
+                <Navbar.Brand href="/" >Avenger MotorCycle</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link className="mr-3 btn btn-outline-dark text-warning badge-pill" 
+                        href="/" >Home</Nav.Link>
+                        <Nav.Link className="mr-3 btn btn-outline-dark text-warning badge-pill" 
+                        href="/versions" >Versions</Nav.Link>
+                        <Nav.Link className="mr-3 btn btn-outline-dark text-warning badge-pill" 
+                        href="/features" >Features</Nav.Link>
+                        <Nav.Link className="mr-3 btn btn-outline-dark text-warning badge-pill" 
+                        href="/services" >Services</Nav.Link>
+                        <Nav.Link className="mr-3 btn btn-outline-dark text-warning badge-pill" 
+                        href="/connect" >Connect</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+            <hr class="my-7"/>
+            {/* <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
                 <div className="container-fluid">
                     <a href="#" className="navbar-brand">
                         Avenger MotorCycle
@@ -52,7 +72,7 @@ const AvengerMenu=()=>{
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
         </>
     );
 }
