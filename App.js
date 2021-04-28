@@ -3,6 +3,27 @@ import reactDom from 'react-dom';
 //import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Redirect, Route, Switch } from 'react-router';
+import BikeMenu from './BikeMenu';
+import BikeHome from './BikeHome';
+import NewBikeUser from './NewBikeUser';
+import Connect from './Connect';
+
+
+const App=()=>{
+  return(
+    <>
+      <BikeMenu/>
+      <Switch>
+        <Route exact path="/" component={BikeHome}/>
+        <Route exact path="/newuser" component={NewBikeUser}/>
+        <Route exact path="/connect" component={Connect}/>
+      </Switch>
+    </>
+  );
+}
+
+
+/* 
 import AvengerMenu from './AvengerMenu';
 import AvengerHome from './AvengerHome';
 import Versions from './Versions';
@@ -25,6 +46,7 @@ const App=()=>{
     </>
   );
 }
+*/
 
 /* 
 import react, { useState } from 'react';
