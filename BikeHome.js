@@ -3,7 +3,7 @@ const BikeHome=()=>{
         <>
             <div className="my-4 container-fluid">
                 <div className="row justify-content-around">
-                    <div className="col-md-4 col-sm-12 align-self-center border p-5 shadow">
+                    <div className="col-md-4 col-sm-12 align-self-center border p-5 shadow rounded">
                         <h1 className="display-4">Service Authoriser Login</h1>
                         <form>
                             <div className="form-group">

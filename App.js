@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { useState } from 'react';
 import reactDom from 'react-dom';
 //import Kart from './Kart';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -7,15 +7,30 @@ import BikeMenu from './BikeMenu';
 import BikeHome from './BikeHome';
 import NewBikeUser from './NewBikeUser';
 import Connect from './Connect';
+import BikeRegister from './BikeRegister';
+import ListAll from './ListAll';
+import FindBike from './FindBike';
 
 
 const App=()=>{
+  const[users,setUsers]=useState([]);
+
+  const newuser=(user)=>{
+    setUsers((old)=>{
+      return [...old,user]
+    });
+    alert("new user has added");
+  }
+
   return(
     <>
       <BikeMenu/>
       <Switch>
         <Route exact path="/" component={BikeHome}/>
-        <Route exact path="/newuser" component={NewBikeUser}/>
+        <Route exact path="/newuser" component={()=><NewBikeUser onAdd={newuser}/>}/>
+        <Route exact path="/register" component={BikeRegister}/>
+        <Route exact path="/list" component={ListAll}/>
+        <Route exact path="/find" component={FindBike}/>
         <Route exact path="/connect" component={Connect}/>
       </Switch>
     </>
